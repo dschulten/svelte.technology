@@ -30,6 +30,10 @@ Any [default data](#default-data), [computed properties](#computed-properties), 
 
 > The SSR compiler will generate a CommonJS module for each of your components – meaning that `import` and `export` statements are converted into their `require` and `module.exports` equivalents. If your components have non-component dependencies, they must also work as CommonJS modules in Node. If you're using ES2015 modules, we recommend [reify](https://github.com/benjamn/reify) for automatically converting them to CommonJS.
 
+### Hydration
+Svelte can hydrate the server-side rendered markup, i.e. when Javascript takes control of the DOM, it does not recreate elements which are already present. To enable this, use the `hydratable: true` option on the Svelte compiler when you build your component and initialize your application by passing `hydrate: true` as option.
+
+See [svelte-ssr-bundle](https://github.com/Rich-Harris/svelte-ssr-bundle) for an example.
 
 ### Rendering CSS
 
